@@ -1,21 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap1.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 09:35:31 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/24 12:19:32 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/02/25 12:40:33 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void check_leaks()
-{
-    system("leaks push_swap1");
-}
+#include "push_swap_bonus.h"
 
 void	free_split(char **split)
 {
@@ -78,22 +73,25 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	// atexit(check_leaks);
+	char *word;
 	if (argc > 1)
 	{
 		stocker_a(&a, argv);
-		indice_lst(&a);
-		if (check_sorted(a))
-			exit(0);
-		if (lst_size(a) <= 3)
-			sort_three(&a);
-		else if (lst_size(a) <= 4)
-			sort_four(&a, &b);
-		else if (lst_size(a) <= 5)
-			sort_five(&a, &b);
+		word = get_next_line(0);
+		while(word)
+		{
+			move(&a,&b,word);
+		// printf("test1:%s\n", word);
+			free(word);
+			word = get_next_line(0);
+		}
+		if(check_sorted(a) && !b)
+			write(1,"OK\n",3);
 		else
-			range_sort(&a, &b);
+			write(1,"KO\n",3);
+		// printf("%s\n",move);
 	}
 	free_stack(a);
+	free_stack(b);
 	return (0);
 }

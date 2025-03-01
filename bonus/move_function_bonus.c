@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_function.c                                    :+:      :+:    :+:   */
+/*   move_function_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 12:48:52 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/25 12:45:39 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:28:26 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ int	ft_strncmp(char *s1, char *s2, int c)
 	return (1);
 }
 
-// int	ft_strlen(char *s)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (s[i])
-// 		i++;
-// // 	return (i);
-// }
+void	free_move(t_stack **a, t_stack **b, char *move)
+{
+	write(2, "Error\n", 6);
+	free(move);
+	free(*a);
+	free(*b);
+	exit(1);
+}
 
 void	move(t_stack **a, t_stack **b, char *move)
 {
@@ -56,18 +55,10 @@ void	move(t_stack **a, t_stack **b, char *move)
 		rra(a);
 	else if (ft_strncmp("rrb\n", move, 4))
 		rrb(b);
-	else if(ft_strncmp("ss\n", move, 3))
-		ss(a,b);
-	else if(ft_strncmp("rr\n", move, 3))
-		rr(a,b);
-	else if(ft_strncmp("rrr\n", move, 4))
-		rrr(a,b);
-	else
-	{
-		write(2,"Error\n",6);
-		free(move);
-		free(*a);
-		free(*b);
-		exit(1);
-	}
+	else if (ft_strncmp("ss\n", move, 3))
+		ss(a, b);
+	else if (ft_strncmp("rr\n", move, 3))
+		rr(a, b);
+	else if (ft_strncmp("rrr\n", move, 4))
+		rrr(a, b);
 }

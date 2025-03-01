@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_operation.c                                 :+:      :+:    :+:   */
+/*   rotate_operation_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 14:16:46 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/25 14:51:12 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:27:56 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	rb(t_stack **b)
 	tmp->next = debut;
 	debut->next = NULL;
 }
-void rr(t_stack **a,t_stack **b)
+
+void	rr(t_stack **a, t_stack **b)
 {
 	ra(a);
 	rb(b);

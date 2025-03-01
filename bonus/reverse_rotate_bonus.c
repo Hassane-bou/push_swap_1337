@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 17:31:14 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/25 14:51:23 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:21:29 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ void	rrb(t_stack **b)
 	*b = fin;
 	tmp->next = NULL;
 }
-void rrr(t_stack **a,t_stack **b)
+
+void	rrr(t_stack **a, t_stack **b)
 {
 	rra(a);
 	rrb(b);

@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 09:35:31 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/25 12:40:33 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/02/27 13:17:29 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,26 +70,24 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
+	char	*word;
 
 	a = NULL;
 	b = NULL;
-	char *word;
 	if (argc > 1)
 	{
 		stocker_a(&a, argv);
 		word = get_next_line(0);
-		while(word)
+		while (word)
 		{
-			move(&a,&b,word);
-		// printf("test1:%s\n", word);
+			move(&a, &b, word);
 			free(word);
 			word = get_next_line(0);
 		}
-		if(check_sorted(a) && !b)
-			write(1,"OK\n",3);
+		if (check_sorted(a) && !b)
+			write(1, "OK\n", 3);
 		else
-			write(1,"KO\n",3);
-		// printf("%s\n",move);
+			write(1, "KO\n", 3);
 	}
 	free_stack(a);
 	free_stack(b);

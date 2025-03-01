@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/18 13:33:01 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/19 10:14:14 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:26:36 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	error_function(void)
 {
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(1);
 }

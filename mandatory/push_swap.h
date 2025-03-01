@@ -6,7 +6,7 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:53:54 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/24 10:41:17 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:27:08 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 

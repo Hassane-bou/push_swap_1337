@@ -6,17 +6,15 @@
 /*   By: haboucha <haboucha@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 09:53:54 by haboucha          #+#    #+#             */
-/*   Updated: 2025/02/25 11:46:48 by haboucha         ###   ########.fr       */
+/*   Updated: 2025/03/01 11:25:57 by haboucha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_BONUS_H
 # define PUSH_SWAP_BONUS_H
 
-#include "./Get_Next_Line/get_next_line.h"
-
+# include "./Get_Next_Line/get_next_line.h"
 # include <limits.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
@@ -60,5 +58,6 @@ char				*allocate_word(char **pr, int i, int j, int k);
 void				move(t_stack **a, t_stack **b, char *move);
 void				indice_lst(t_stack **a);
 void				range_sort(t_stack **a, t_stack **b);
+void				free_move(t_stack **a, t_stack **b, char *move);
 
 #endif
